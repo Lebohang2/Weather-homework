@@ -66,8 +66,8 @@ p strong {
   margin-left: 10px;
 }
 .weather-icon {
-  font-size: 45px;
-  margin-top: 22px;
+  width: 88px;
+  height: 88px;
 }
 .weather-unit {
   font-size: 28px;

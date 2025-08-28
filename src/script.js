@@ -8,10 +8,14 @@ function findWeatherInfo(response) {
   let timeElement = document.querySelector("#time-detail");
   let date = new Date(response.data.time * 1000);
 
+  let emojiElement = document.querySelector("#weather-emojy");
+
+  emojiElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" />`;
+
   cityElement.innerHTML = response.data.city;
   conditionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
-  windElement.innerHTML = `${response.data.wind.speed}km/h`;
+  windElement.innerHTML = `${response.data.wind.speed} km/h`;
   timeElement.innerHTML = createDate(date);
   temperatueElement.innerHTML = Math.round(temp);
 }
