@@ -53,6 +53,27 @@ function authoriseSearch(event) {
 
   getCity(cityForm.value); // fetches API
 }
+function showForecast() {
+  let days = ["Tue", "Wed", "Thurs", "Fri", "Sat"];
+  let castHtml = "";
+
+  days.forEach(function (day) {
+    castHtml =
+      castHtml +
+      `<div class="forecast-weather-day">
+            <div class="forecast-day">${day}</div>
+            <div class="forecast-emoji">🌞</div>
+            <div class="forecast-temp">
+              <div class="forecast-high-temp"><strong>23°C</strong></div>
+              <div class="forecast-high-temp">15°C</div>
+            </div>
+          </div>
+          `;
+  });
+
+  let castElement = document.querySelector("#forecasting");
+  castElement.innerHTML = castHtml;
+}
 
 let formSearchElement = document.querySelector("#form-search");
 formSearchElement.addEventListener("submit", authoriseSearch);
