@@ -18,6 +18,8 @@ function findWeatherInfo(response) {
   windElement.innerHTML = `${response.data.wind.speed} km/h`;
   timeElement.innerHTML = createDate(date);
   temperatueElement.innerHTML = Math.round(temp);
+
+  giveForecast(response.data.city);
 }
 
 function createDate(date) {
@@ -53,7 +55,13 @@ function authoriseSearch(event) {
 
   getCity(cityForm.value); // fetches API
 }
-function showForecast() {
+function giveForecast(city) {
+  let apiKey = "410o3ft86210d5f3d73f24a4d34d2bab";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+
+function showForecast(response) {
   let days = ["Tue", "Wed", "Thurs", "Fri", "Sat"];
   let castHtml = "";
 
