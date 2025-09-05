@@ -78,10 +78,14 @@ p strong {
   color: rgba(39, 33, 66, 0.4);
   font-size: 15px;
   line-height: 20px;
+  margin-bottom: 10px;
 }
-.forecast-emoji {
+.forecast-emoji img {
   text-align: center;
-  font-size: 35px;
+  width: 88px
+  display: block;
+  margin: 0 auto;
+  height: 88px
 }
 .forecast-temp {
   display: flex;
@@ -93,7 +97,7 @@ p strong {
 .forecast-high-temp {
   padding: 0 10px;
 }
-.forecast-weather {
+#forecasting{
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
